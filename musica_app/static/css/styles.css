@@ -1,0 +1,62 @@
+/* Fondo y fuente principal */
+body {
+    background-image: url("../img/fondo11.jpg"); /* Imagen de fondo */
+    background-size: cover; /* Cubrir toda la pantalla */
+    background-attachment: fixed; /* Fijar fondo al desplazarse */
+    background-position: center; /* Centrar imagen */
+    background-repeat: no-repeat; /* No repetir imagen */
+    font-family: 'Arial', sans-serif;
+    color: #ffffff; /* Color de texto por defecto */
+    margin: 0;
+}
+
+/* Estilo para encabezados de sección */
+h1 {
+    color: #ffffff; /* Color blanco para el texto */
+    text-align: center; /* Centrado */
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido para la barra de navegación */
+}
+
+.nav-link {
+    color: #ffffff !important; /* Color blanco para los enlaces de navegación */
+}
+
+.nav-link:hover {
+    color: #3498db !important; /* Color azul claro al pasar el cursor */
+}
+
+/* Contenedor principal */
+.container {
+    padding: 40px;
+}
+
+/* Botones principales */
+.btn-primary, .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
+    color: #ffffff;
+    border: 1px solid #ffffff; /* Borde blanco */
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #3498db; /* Fondo azul al pasar el cursor */
+    color: #000000; /* Texto negro en hover */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Fondo más claro en hover */
+    color: #000000; /* Texto negro en hover */
+}
