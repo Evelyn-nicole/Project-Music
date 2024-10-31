@@ -42,9 +42,7 @@ class PerfilRedesSociales(models.Model):
 class Artista(models.Model):
     nombre = models.CharField(max_length=50)
     nacionalidad = models.CharField(max_length=50)
-    genero_musical = models.CharField(max_length=50)
-    # perfil = models.CharField(max_length=255) 
-    # sello = models.CharField(max_length=100)  
+    genero_musical = models.CharField(max_length=50) 
     perfil = models.OneToOneField(PerfilRedesSociales, on_delete=models.CASCADE)
     sello = models.ForeignKey(SelloDiscografico, on_delete=models.CASCADE)
 
@@ -89,8 +87,3 @@ class Album(models.Model):
 
     def __str__(self):
         return self.titulo
-   
-   
-   
-
-

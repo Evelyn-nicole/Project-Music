@@ -21,19 +21,26 @@ class ArtistaForm(forms.ModelForm):
 
 
 
+# class AlbumForm(forms.ModelForm):
+#     class Meta:
+#         model = Album
+#         fields = ['titulo', 'fecha_lanzamiento', 'genero', 'artistas'] 
+
+#     def save(self, commit=True):
+#         instance = super().save(commit=False)
+#         instance.full_clean()
+#         if commit:
+#             instance.save()
+#         return instance
+    
 class AlbumForm(forms.ModelForm):
     class Meta:
         model = Album
-        fields = ['titulo', 'fecha_lanzamiento', 'genero', 'artistas'] 
+        fields = ['titulo', 'fecha_lanzamiento', 'genero', 'artistas']
 
-    def save(self, commit=True):
-        instance = super().save(commit=False)
-        instance.full_clean()
-        if commit:
-            instance.save()
-        return instance
-    
-    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['artistas'].queryset = Artista.objects.all()   
     
 
 class PerfilRedesSocialesForm(forms.ModelForm):

@@ -56,13 +56,24 @@ def album_index(request):
     albumes = Album.objects.all()
     return render(request, 'musica_app/album_index.html', {'albumes': albumes})
 
-# Vista para crear un nuevo álbum
+# # Vista para crear un nuevo álbum
+# def album_create(request):
+#     if request.method == 'POST':
+#         form = AlbumForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('album_index')
+#     else:
+#         form = AlbumForm()
+#     return render(request, 'musica_app/album_create.html', {'form': form})
 def album_create(request):
     if request.method == 'POST':
         form = AlbumForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('album_index')
+            album = form.save(commit=False)
+            album.save()  # Guarda el álbum
+            form.save_m2m()  # Guarda la relación ManyToMany entre álbum y artistas
+            return redirect('album_index')  # Redirige al listado de álbumes después de guardar
     else:
         form = AlbumForm()
     return render(request, 'musica_app/album_create.html', {'form': form})
