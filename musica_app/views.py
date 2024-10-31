@@ -20,11 +20,13 @@ def artista_create(request):
         form = ArtistaForm()
     return render(request, 'musica_app/artista_create.html', {'form': form})
 
+
 # Vista para ver los detalles de un artista
 def artista_detail(request, pk):
     artista = get_object_or_404(Artista, pk=pk)
     albumes = artista.album_set.all()  # Álbumes en los que aparece el artista
     return render(request, 'musica_app/artista_detail.html', {'artista': artista, 'albumes': albumes})
+
 
 # Vista para actualizar un artista existente
 def artista_update(request, pk):
@@ -38,6 +40,7 @@ def artista_update(request, pk):
         form = ArtistaForm(instance=artista)
     return render(request, 'musica_app/artista_update.html', {'form': form})
 
+
 # Vista para eliminar un artista
 def artista_delete(request, pk):
     artista = get_object_or_404(Artista, pk=pk)
@@ -45,9 +48,6 @@ def artista_delete(request, pk):
         artista.delete()
         return redirect('artista_index')
     return render(request, 'musica_app/artista_delete.html', {'artista': artista})
-
-
-
 
 
 # CRUD ALBUMES
@@ -67,11 +67,15 @@ def album_create(request):
         form = AlbumForm()
     return render(request, 'musica_app/album_create.html', {'form': form})
 
+
+
 # Vista para ver los detalles de un álbum
 def album_detail(request, pk):
     album = get_object_or_404(Album, pk=pk)  # Obtiene el álbum usando su id (pk)
     artistas = album.artistas.all()  # Obtiene todos los artistas relacionados con el álbum
     return render(request, 'musica_app/album_detail.html', {'album': album, 'artistas': artistas})
+
+
 
 # Vista para actualizar un álbum existente
 def album_update(request, pk):

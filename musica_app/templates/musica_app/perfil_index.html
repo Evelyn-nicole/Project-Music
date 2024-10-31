@@ -22,9 +22,9 @@
                     <td><a href="{{ perfil.facebook }}" target="_blank">{{ perfil.facebook }}</a></td>
                     <td><a href="{{ perfil.twitter }}" target="_blank">{{ perfil.twitter }}</a></td>
                     <td>
-                        <a href="{% url 'perfil_detail' perfil.id %}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Ver</a>
-                        <a href="{% url 'perfil_update' perfil.id %}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{% url 'perfil_delete' perfil.id %}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                        <a href="{% url 'perfil_detail' perfil.id %}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                        <a href="{% url 'perfil_update' perfil.id %}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <a href="{% url 'perfil_delete' perfil.id %}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 {% empty %}
